@@ -1,8 +1,8 @@
 namespace AdventOfCode2025.Puzzles;
 
-public class Puzzle1 : IPuzzle
+public class Puzzle1 : PuzzleBase
 {
-    public string Solve1(string input)
+    protected override string Solve1(string input)
     {
         var current = 50;
         var password = 0;
@@ -21,7 +21,7 @@ public class Puzzle1 : IPuzzle
         return password.ToString();
     }
 
-    public string Solve2(string input)
+    protected override string Solve2(string input)
     {
         var safe = new Safe();
 

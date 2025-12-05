@@ -2,14 +2,14 @@ using System.Data;
 
 namespace AdventOfCode2025.Puzzles;
 
-public class Puzzle3 : IPuzzle
+public class Puzzle3 : PuzzleBase
 {
-    public string Solve1(string input)
+    protected override string Solve1(string input)
     {
         return Solve(input, 2);
     }
 
-    public string Solve2(string input)
+    protected override string Solve2(string input)
     {
         return Solve(input, 12);
     }

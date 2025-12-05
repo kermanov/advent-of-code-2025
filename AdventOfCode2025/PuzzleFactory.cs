@@ -5,7 +5,7 @@ namespace AdventOfCode2025;
 
 public static class PuzzleFactory
 {
-    public static IPuzzle GetPuzzle(string day)
+    public static PuzzleBase GetPuzzle(string day)
     {
         var typeName = $"AdventOfCode2025.Puzzles.Puzzle{day}";
         var type = Assembly.GetExecutingAssembly().GetType(typeName);
@@ -15,7 +15,7 @@ public static class PuzzleFactory
             throw new ArgumentException($"Puzzle for day {day} not found.");
         }
 
-        if (Activator.CreateInstance(type) is not IPuzzle puzzle)
+        if (Activator.CreateInstance(type) is not PuzzleBase puzzle)
         {
              throw new InvalidOperationException($"Type {typeName} does not implement IPuzzle.");
         }

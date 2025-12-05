@@ -1,13 +1,13 @@
 namespace AdventOfCode2025.Puzzles;
 
-public class Puzzle2 : IPuzzle
+public class Puzzle2 : PuzzleBase
 {
-    public string Solve1(string input)
+    protected override string Solve1(string input)
     {
         return CommonSolution(input, IdIsInvalid);
     }
 
-    public string Solve2(string input)
+    protected override string Solve2(string input)
     {
         return CommonSolution(input, IdIsInvalid2);
     }
