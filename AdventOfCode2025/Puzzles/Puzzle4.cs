@@ -41,7 +41,7 @@ public class Puzzle4 : IPuzzle
     static bool IsAccessible((int X, int Y) roll, HashSet<(int X, int Y)> rolls)
     {
         Span<(int, int)> adjacentPositions = stackalloc (int, int)[8];
-        GetAdjacentPositions(roll, ref adjacentPositions);
+        GetAdjacentPositions(roll, adjacentPositions);
         return IsAdjacentCountAcceptable(adjacentPositions, rolls);
     }
 
@@ -65,7 +65,7 @@ public class Puzzle4 : IPuzzle
         return true;
     }
 
-    static void GetAdjacentPositions((int X, int Y) roll, ref Span<(int, int)> positions)
+    static void GetAdjacentPositions((int X, int Y) roll, Span<(int, int)> positions)
     {
         positions[0] = (roll.X - 1, roll.Y - 1);
         positions[1] = (roll.X, roll.Y - 1);
